@@ -10,4 +10,10 @@ After that, I think that Julien can start programming.
 
 Day 2:  19/06/19 coder: Ivan
 ----------------------------
-Today I've made some changes on the previous code, by adding some queries and comments on it. After that I started by creating some classes for mine second part.. the one for parsing datastructure but there are still some bug on it that i need absolutely to improve and after that it comes the julien part... and when he will finish that, we will together do the filters code... so stay tuned!
+Today I've made some changes on the previous code, by adding some queries and comments on it. After that I started by creating some classes for mine second part.. the one for parsing datastructure but there are still some bug on it that i need absolutely to improve and after that it comes the julien part... and when he will finish that, we will together do the filters code... 
+
+Day 3: 21/06/19 coder: Ivan
+---------------------------
+Today I've completely finished my part. There's still one bug that i cannot remove.. this bug consist of  java.lang.NumberFormatException: for input String: "AUTORIZ." (or "SCIA")
+
+But it prints all the line of the csv file.
