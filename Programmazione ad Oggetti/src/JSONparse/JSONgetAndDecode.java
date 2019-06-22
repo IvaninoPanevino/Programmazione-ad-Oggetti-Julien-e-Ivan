@@ -19,24 +19,24 @@ public class JSONgetAndDecode {
 
 	public static void main(String[] args) {
 		/*
-		Leggere da una connessione URL (URLConnection) invece di leggere direttamente da un URL Ë migliore!
-		Questo perchË posso usare, allo stesso tempo, l'oggetto URLConnection per altre mansioni (come scrivere sul URL)
+		Leggere da una connessione URL (URLConnection) invece di leggere direttamente da un URL √® migliore!
+		Questo perch√® posso usare, allo stesso tempo, l'oggetto URLConnection per altre mansioni (come scrivere sul URL)
 		*/
 
 		String url = " https://www.dati.gov.it/api/3/action/package_show?id=a8aa3845-bd09-46ab-b2fa-c76ed745fa10";
 		if(args.length == 1)
 			url = args[0]; //controlla se l'url viene messo tramite argomento di avvio del programma
 		try {
-			
+			//apro una connessione 
 			URLConnection openConnection = new URL(url).openConnection();
 			openConnection.addRequestProperty("User-Agent", "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:25.0) Gecko/20100101 Firefox/25.0 Chrome/51.0.2704.84");
-			InputStream in = openConnection.getInputStream();
-			
+			InputStream in = openConnection.getInputStream();//restituisce l'inputstream connesso all'output del processo
+			//l'inputstream contiene delle API(metodi e campi)	 che permettono di realizzare stream che leggono byte
 			 String data = "";
 			 String line = "";
 			 try {
-			   InputStreamReader inR = new InputStreamReader( in );
-			   BufferedReader buf = new BufferedReader( inR );
+			   InputStreamReader inR = new InputStreamReader( in ); // accetta un oggetto inputstream e crea unoggetto inputstreamreader (quindi crea uno reader)
+			   BufferedReader buf = new BufferedReader( inR ); //il buffering rende pi√π efficiente le operazioni di I/O su stream di caratteri
 			  
 			   while ( ( line = buf.readLine() ) != null ) {
 				   data+= line;
@@ -49,8 +49,9 @@ public class JSONgetAndDecode {
 			JSONObject objI = (JSONObject) (obj.get("result"));
 			JSONArray objA = (JSONArray) (objI.get("resources"));
 			
+			//for(int i=0; i<arr.length();i++){ arr.getJSONObject(i); } 
 			for(Object o: objA){
-			    if ( o instanceof JSONObject ) {
+			    if ( o instanceof JSONObject ) 
 			        JSONObject o1 = (JSONObject)o; 
 			        String format = (String)o1.get("format");
 			        String urlD = (String)o1.get("url");
