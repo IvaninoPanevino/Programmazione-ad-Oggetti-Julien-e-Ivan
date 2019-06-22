@@ -34,7 +34,7 @@ public class Serialization {
 						continue;
 					}
 					else i++;
-					
+					// trasformo le variabili di tipo String ed Integer nell'oggetto Hotel e li metto in un vettore
 					v.add(new Hotel(values[0],values[1],values[2],values[3],values[4],values[5],values[6],Integer.parseInt(values[7].replaceAll("\"", "")),Integer.parseInt(values[8].replaceAll("\"", "")),Integer.parseInt(values[9].replaceAll("\"", "")),values[10],values[11],values[12],values[13]));
 
                 }
@@ -56,7 +56,7 @@ public class Serialization {
 
 		List<List<String>> records2 = new ArrayList<>();
 		try (Scanner s = new Scanner(new File("datastructure.csv"));) {
-			while (s.hasNextLine()) {
+			while (s.hasNextLine()) {//finchè ci saranno altre linee in input (presenti in questo scanner) restituirà true
 				records2.add(getRecordFromLine(s.nextLine()));
 			}
 			s.close();
