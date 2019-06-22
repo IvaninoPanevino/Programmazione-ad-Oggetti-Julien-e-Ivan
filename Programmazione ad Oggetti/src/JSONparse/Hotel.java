@@ -1,7 +1,7 @@
 package JSONparse;
 
 import java.io.*;
-//La serializzazione � la trasformazione di un oggetto in memoria in una sequenza di byte 
+//La serializzazione è la trasformazione di un oggetto in memoria in una sequenza di byte 
 //(ospitata in un file, trasmesso in rete ecc..)
 
 public class Hotel implements Serializable {
@@ -9,7 +9,7 @@ public class Hotel implements Serializable {
 	private String businessType;
 	private String classification;
 	private String denomination;
-	private String CAP;
+	private String CAP; // ho cambiato da Int a STring perchè non dovremmo farci delle operazioni ma solo leggerlo
 	private String address;
 	private String tel;
 	private int room;
