@@ -17,3 +17,7 @@ Day 3: 21/06/19 coder: Ivan
 Today I've completely finished my part. There's still one bug that i cannot remove.. this bug consist of  java.lang.NumberFormatException: for input String: "AUTORIZ." (or "SCIA")
 
 But it prints all the line of the csv file.
+
+Day 4: 22/06/19 coder: Ivan
+---------------------------
+IT WORKS !!!
