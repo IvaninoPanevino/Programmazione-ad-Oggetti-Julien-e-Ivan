@@ -55,6 +55,10 @@ public class Serialization {
 		for(Hotel item: v) {		
 			System.out.println(item.toString()); //devo usare item e non v per vedere
 		}
+		
+		Statistics stats = new Statistics();
+		stats.setSize(v.size());
+		stats.Statistics(v);
 	}
 
 	private static List<String> getRecordFromLine(String nextLine) {
