@@ -26,4 +26,6 @@ I've also uploaded the UML of our project.. I've done the UML using ObjectAid, w
 
 Day 5: 23/06/19 coder: Julien
 -----------------------------
-I've added a class called Statistics. This class permits to calculate the average, the min and the max of some datas and print them in the console to the user.
+- I've added a class called Statistics. This class permits to calculate the average, the min, the max and the counting of some datas and print them in the console to the user.
+- I've also added a class called Filters. This class permits to print a menu to choose filters, and print the hostels with the matching filters
+
