@@ -26,3 +26,4 @@ I've also uploaded the UML of our project.. I've done the UML using ObjectAid, w
 
 Day 5: 23/06/19 coder: Julien
 -----------------------------
+I've added a class called Statistics. This class permits to calculate the average, the min and the max of some datas and print them in the console to the user.
