@@ -22,5 +22,7 @@ Day 4: 22/06/19 coder: Ivan
 ---------------------------
 IT WORKS !!!
 
+I've also uploaded the UML of our project.. I've done the UML using ObjectAid, which it is an Ecplise plugin.
+
 Day 5: 23/06/19 coder: Julien
 -----------------------------
