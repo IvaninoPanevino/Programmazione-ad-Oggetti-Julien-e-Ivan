@@ -38,27 +38,25 @@ public class Statistics extends Hotel{
 		System.out.printf("%n%n:::::::::::::STATISTICS:::::::::::::%n%n");
 		
 		System.out.printf("%n---Rooms---%n");
-		System.out.printf("Rooms average in hotels : %.2f %n", Average(room));
+		System.out.printf("Rooms average in hotels : %d %n", Average(room));
 		System.out.printf("Max rooms : %d %n", Max(room));
 		System.out.printf("Min rooms : %d %n", Min(room));
 		
 		System.out.printf("%n---Beds---%n");
-		System.out.printf("Beds average in hotels : %.2f %n", Average(bed));
+		System.out.printf("Beds average in hotels : %d %n", Average(bed));
 		System.out.printf("Max beds : %d %n", Max(bed));
 		System.out.printf("Min beds : %d %n", Min(bed));
 		
 		System.out.printf("%n---Toilets---%n");
-		System.out.printf("Toilets average in hotels : %.2f%n", Average(toilet));
+		System.out.printf("Toilets average in hotels : %d%n", Average(toilet));
 		System.out.printf("Max toilets : %d%n", Max(toilet));
 		System.out.printf("Min toilets : %d %n%n", Min(toilet));
-
-		//Count(structureType);
 	}
 	
-	private double Average(int tab[]) {
-		double avg=0;
+	private int Average(int tab[]) {
+		int avg=0;
 		for(int n : tab) {		
-			avg+=n;
+			avg+=n; //devo usare item e non v per vedere
 		}
 		
 		return (avg/size);
@@ -81,42 +79,4 @@ public class Statistics extends Hotel{
 		}
 		return min;
 	}
-	/*
-	private void Count(String tab[]) {
-		String[] cat= new String[size];
-		int[] number= new int[size];
-		int j=0;
-		
-		for(int i=0;i<size;i++)
-		{
-			cat[i]="";
-			number[i]=0;
-		} 
-		
-		int nCat = 1;
-		cat[0]=tab[0];
-		
-		for(int i=0;i<size;i++)
-		{
-			System.out.printf("nCat : %d%n", nCat);
-			do
-			{	
-				System.out.printf("j : %d%n", j);
-				j++;
-			} while  (tab[i]!=cat[j-1] && j-1<nCat);
-			
-			if (j==nCat)
-			{	
-				nCat++;
-				cat[j]=tab[i];
-			}	
-			number[j]++;
-			j=0;
-		} 
-		
-		for(int i=0;i<nCat;i++)
-		{
-			System.out.printf("La catégorie : %s est presente %d %n%n", cat[i], number[i]);
-		} 
-	}*/
 }
