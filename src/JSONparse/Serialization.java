@@ -59,6 +59,10 @@ public class Serialization {
 		Statistics stats = new Statistics();
 		stats.setSize(v.size());
 		stats.Statistics(v);
+		
+		Filters filters = new Filters();
+		filters.setSize(v.size());
+		filters.Filters(v);
 	}
 
 	private static List<String> getRecordFromLine(String nextLine) {
