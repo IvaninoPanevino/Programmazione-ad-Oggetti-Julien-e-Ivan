@@ -63,7 +63,7 @@ public class Filters extends Hotel{
 			do
 			{	
 				System.out.printf("%n%n:::::Choose a category to apply your filter::::: %n");
-				System.out.printf("0.--END--4 %n");
+				System.out.printf("0.--END-- %n");
 				System.out.printf("1.Rooms in hostel %n");
 				System.out.printf("2.Beds in hostel %n");
 				System.out.printf("3.Toilets in hostel %n");
@@ -82,18 +82,15 @@ public class Filters extends Hotel{
 				switch (cat)
 				{
 				 case 1:
-					  System.out.printf("%n%nHere are the sub-categories of Rooms, choose one to filter:%n");
-					  PrintCat(room);
+					  System.out.printf("%n%nHere are the sub-categories of Rooms:%n");
 					  PrintFilter(room);
 				    break;
 				 case 2:
-					  System.out.printf("%n%nHere are the sub-categories of Beds, choose one to filter:%n");
-					  PrintCat(bed);
+					  System.out.printf("%n%nHere are the sub-categories of Beds:%n");
 					  PrintFilter(bed);
 				    break;
 				 case 3:
-					  System.out.printf("%n%nHere are the sub-categories of Toilets, choose one to filter:%n");
-					  PrintCat(toilet);
+					  System.out.printf("%n%nHere are the sub-categories of Toilets:%n");
 					  PrintFilter(toilet);
 				    break;
 				  case 4:
@@ -146,7 +143,7 @@ public class Filters extends Hotel{
 				    System.out.printf("%n%nNot a choice");
 				}
 				
-			} while(cat<0);
+			} while(cat<0 ||cat>12);
 			System.out.printf("%n%nChoose an other filter? (1:yes,0:no) %n");
 			go = sc.nextInt();
 		} while (go==1);
@@ -233,7 +230,7 @@ public class Filters extends Hotel{
 		   for (int i=0;i<size;i++) {
 		           if (tab[i].equals(choice))
 		           {
-		        	   System.out.printf("Row n�%d%n",i+1);
+		        	   System.out.printf("Row n째%d%n",i+1);
 		           }
 		 
 		   }
@@ -241,8 +238,46 @@ public class Filters extends Hotel{
 	
 	private void PrintFilter(int tab[]) {
 		int choice= 0;
-		System.out.printf("%n%nWhat is your filter?%n");
 		Scanner sc = new Scanner(System.in);
+		PrintCat(tab);
+		System.out.printf("%n%nChoose a type of filters?%n");
+		System.out.printf("%n1. Target number%n");
+		System.out.printf("2. Min filter%n");
+		System.out.printf("3. Max filter%n");
+		System.out.printf("4. Min and max filter%n");
+		
+		
+		do {
+			System.out.printf("%n%nWhat is your type of filter?%n");
+			choice = sc.nextInt();
+			
+		switch (choice)
+		{
+		 case 1:
+			 FilterTarget(tab);
+		    break;
+		 case 2:
+			 FilterMin(tab);
+		    break;
+		 case 3:;
+		 FilterMax(tab);
+		    break;
+		  case 4:
+			  FilterMinMax(tab);
+		    break;
+		    
+		  default:
+		    System.out.printf("%n%nNot a choice");
+		}
+		}while (choice<1||choice>4);
+		
+		
+	}
+	
+	private void FilterTarget(int tab[]) {
+		int choice=0;
+		Scanner sc = new Scanner(System.in);
+		System.out.printf("%n%nWhat is your target number?%n");
 		choice = sc.nextInt();
 		
 		System.out.printf("%n%n");
@@ -250,7 +285,60 @@ public class Filters extends Hotel{
 		   for (int i=0;i<size;i++) {
 		           if (tab[i]==choice)
 		           {
-		        	   System.out.printf("Row n�%d%n",i+1);
+		        	   System.out.printf("Row n째%d%n",i+1);
+		           }
+		 
+		   }
+	}
+	
+	private void FilterMax(int tab[]) {
+		int max=0;
+		Scanner sc = new Scanner(System.in);
+		System.out.printf("%n%nWhat is your max?%n");
+		max = sc.nextInt();
+		
+		System.out.printf("%n%n");
+		
+		   for (int i=0;i<size;i++) {
+		           if (tab[i]<=max)
+		           {
+		        	   System.out.printf("Row n째%d%n",i+1);
+		           }
+		 
+		   }
+	}
+	
+	private void FilterMin(int tab[]) {
+		int min=0;
+		Scanner sc = new Scanner(System.in);
+		System.out.printf("%n%nWhat is your min?%n");
+		min = sc.nextInt();
+		
+		System.out.printf("%n%n");
+		
+		   for (int i=0;i<size;i++) {
+		           if (tab[i]>=min)
+		           {
+		        	   System.out.printf("Row n째%d%n",i+1);
+		           }
+		 
+		   }
+	}
+	
+	private void FilterMinMax(int tab[]) {
+		int min=0, max=0;
+		Scanner sc = new Scanner(System.in);
+		System.out.printf("%n%nWhat is your min?%n");
+		min = sc.nextInt();
+		System.out.printf("%n%nWhat is your max?%n");
+		max = sc.nextInt();
+		
+		System.out.printf("%n%n");
+		
+		   for (int i=0;i<size;i++) {
+		           if (tab[i]>=min&&tab[i]<=max)
+		           {
+		        	   System.out.printf("Row n째%d%n",i+1);
 		           }
 		 
 		   }
